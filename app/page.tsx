@@ -1,20 +1,32 @@
-import AboutMe from '@components/AboutMe'
-import MainHero from '@components/MainHero'
-import MyWorks from '@components/MyWorks'
+import { type Metadata } from 'next'
+import { notFound } from 'next/navigation'
+import { asImageSrc } from '@prismicio/client'
+import { SliceZone } from '@prismicio/react'
 
-export const metadata = {
-  title: 'Sagar Khadka',
-  description: 'Frontend developer with experience in UI design as well'
+import { createClient } from '@/prismicio'
+import { components } from '@/slices'
+
+export default async function Page() {
+	const client = createClient()
+	const page = await client.getSingle('home_page').catch(() => notFound())
+
+	return (
+		<SliceZone
+			slices={page.data.slices}
+			components={components}
+		/>
+	)
 }
 
-const page = () => {
-  return (
-    <>
-      <MainHero />
-      <AboutMe />
-      <MyWorks />
-    </>
-  )
-}
+export async function generateMetadata(): Promise<Metadata> {
+	const client = createClient()
+	const page = await client.getSingle('home_page').catch(() => notFound())
 
-export default page
+	return {
+		title: page.data.meta_title,
+		description: page.data.meta_description,
+		openGraph: {
+			images: [{ url: asImageSrc(page.data.meta_image) ?? '' }],
+		},
+	}
+}
