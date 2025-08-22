@@ -17,7 +17,7 @@ const Hero: FC<HeroProps> = ({ slice }) => {
 		<Bounded
 			data-slice-type={slice.slice_type}
 			data-slice-variation={slice.variation}>
-			<div className='font-sans'>
+			<div className='font-sans text-center min-h-screen flex items-center justify-center flex-col gap-6 max-w-6xl mx-auto'>
 				<PrismicRichText field={slice.primary.title} />
 				<PrismicRichText field={slice.primary.copy} />
 				{slice.primary.button.map((link) => (
