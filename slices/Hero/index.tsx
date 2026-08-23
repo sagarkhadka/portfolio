@@ -17,9 +17,13 @@ const Hero: FC<HeroProps> = ({ slice }) => {
 		<Bounded
 			data-slice-type={slice.slice_type}
 			data-slice-variation={slice.variation}>
-			<div className='font-sans text-center min-h-screen flex items-center justify-center flex-col gap-6 max-w-6xl mx-auto'>
-				<PrismicRichText field={slice.primary.title} />
-				<PrismicRichText field={slice.primary.copy} />
+			<div className='font-sans text-center min-h-screen flex items-center justify-center flex-col gap-4 max-w-6xl mx-auto'>
+				<div className='text-4xl font-black uppercase'>
+					<PrismicRichText field={slice.primary.title} />
+				</div>
+				<div className='max-w-2xl'>
+					<PrismicRichText field={slice.primary.copy} />
+				</div>
 				{slice.primary.button.map((link) => (
 					<PrismicNextLink
 						key={link.key}
