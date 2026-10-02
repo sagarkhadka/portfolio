@@ -1,0 +1,35 @@
+{
+  "id": "cta",
+  "type": "SharedSlice",
+  "name": "Cta",
+  "description": "Cta",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "cta_title": {
+          "type": "Text",
+          "config": {
+            "label": "Cta Title",
+            "placeholder": ""
+          }
+        },
+        "cta_description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Cta Description",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,strong,em,hyperlink,embed,list-item,o-list-item"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

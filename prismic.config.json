@@ -1,0 +1,7 @@
+{
+  "repositoryName": "sagar-portfolio",
+  "libraries": [
+    "./slices"
+  ],
+  "routes": []
+}

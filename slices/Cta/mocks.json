@@ -1,0 +1,25 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"cta_title": {
+				"__TYPE__": "FieldContent",
+				"value": "branch",
+				"type": "Text"
+			},
+			"cta_description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Reprehenderit dolor cillum ut dolore sint amet sint sit eiusmod cupidatat elit voluptate. Et ipsum reprehenderit do nulla non in officia duis adipisicing eu Lorem ex."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]
